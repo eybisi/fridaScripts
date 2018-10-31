@@ -1,0 +1,66 @@
+CBATTRequest
+CBAttribute
+CBCentral
+CBCentralManager
+CBCharacteristic
+CBDescriptor
+CBCentralManager
+CBMutableCharacteristic
+CBMutableDescriptor
+CBMutableService
+CBPeer
+CBPeripheral
+CBPeripheralManager
+CBService
+CBUUID
+
+CBAttribute
+############
+
+CBAttribute - .cxx_destruct
+CBAttribute - UUID
+CBAttribute - initWithUUID:
+
+CBCentral
+############
+CBCentral - description
+CBCentral - maximumUpdateValueLength
+
+
+
+CBCentralManager - init
+CBCentralManager - .cxx_destruct
+CBCentralManager - setDelegate:
+CBCentralManager - dealloc
+CBCentralManager - delegate
+CBCentralManager - observeValueForKeyPath:ofObject:change:context:
+CBCentralManager - peripheralWithInfo:
+CBCentralManager - forEachPeripheral:
+CBCentralManager - orphanPeripherals
+CBCentralManager - setIsScanning:
+CBCentralManager - dataArrayToUUIDArray:
+CBCentralManager - peripheralWithIdentifier:
+CBCentralManager - handleRestoringState:
+CBCentralManager - handlePeripheralDiscovered:
+CBCentralManager - handlePeripheralConnectionCompleted:
+CBCentralManager - handlePeripheralDisconnectionCompleted:
+CBCentralManager - handlePeripheralConnectionStateUpdated:
+CBCentralManager - handleZoneLost:
+CBCentralManager - handleConnectionParametersUpdated:
+CBCentralManager - handleMsg:args:
+CBCentralManager - peerWithInfo:
+CBCentralManager - isMsgAllowedWhenOff:
+CBCentralManager - isMsgAllowedAlways:
+CBCentralManager - initWithDelegate:queue:options:
+CBCentralManager - isScanning
+CBCentralManager - retrieveConnectedPeripheralsWithServices:
+CBCentralManager - cancelPeripheralConnection:force:
+CBCentralManager - setDesiredConnectionLatency:forPeripheral:
+CBCentralManager - retrieveConnectedPeripheralsWithServices:allowAll:
+CBCentralManager - peripherals
+CBCentralManager - initWithDelegate:queue:
+CBCentralManager - retrievePeripheralsWithIdentifiers:
+CBCentralManager - connectPeripheral:options:
+CBCentralManager - cancelPeripheralConnection:
+CBCentralManager - scanForPeripheralsWithServices:options:
+CBCentralManager - stopScan
