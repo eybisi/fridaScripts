@@ -9,32 +9,14 @@ Java.perform(function() {
     var reflect = Java.use('java.lang.reflect.Method')
     //var invoke = reflect.invoke.overload('java.lang.Object', '[Ljava.lang.Object;')
     //java.lang.reflect.Method.invoke
-    var dalvik = Java.use("dalvik.system.DexFile") 
-    var dalvik2 = Java.use("dalvik.system.DexClassLoader")
+
     var f = Java.use("java.io.File")
     var url = Java.use("java.net.URL")
     
-    
-
-
-
     f.$init.overload("java.net.URI").implementation = function(a){
         console.log("URI called")
         f.$init(a)
 
-    }
-    f.delete.implementation = function(a){
-        console.log("[+] Delete catched =>" +this.getAbsolutePath())
-        return true
-
-    }
-    dalvik.loadDex.implementation = function(a,b,c){
-        console.log("[+] loadDex Catched -> " + a)
-        return dalvik.loadDex(a,b,c)
-    }
-    dalvik2.$init.implementation = function (a,b,c,d) {
-        console.log("[+] DexClassLoader Catched -> " + a)
-        this.$init(a,b,c,d)
     }
 
     forName.implementation = function(class_name, flag, class_loader) {
@@ -69,6 +51,5 @@ Java.perform(function() {
     }
 });
 
-    // dalvik.system.DexFile 
 
     
