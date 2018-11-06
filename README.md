@@ -1,3 +1,3 @@
 # FridaScripts
 
-My quick&dirty frida scripts
+quick&dirty frida scripts
