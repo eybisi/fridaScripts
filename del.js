@@ -6,7 +6,9 @@ Java.perform(function() {
 
     var f = Java.use("java.io.File")
     f.delete.implementation = function(a){
-        console.log("[+] Delete catched =>" +this.getAbsolutePath())
+        if(this.getAbsolutePath().includes("jar")){
+            console.log("[+] Delete catched =>" +this.getAbsolutePath())
+        }
         return true
 
     }
