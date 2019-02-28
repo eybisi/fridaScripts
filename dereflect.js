@@ -8,7 +8,7 @@ Java.perform(function() {
     var dalvik = Java.use("dalvik.system.DexFile")
     var dalvik2 = Java.use("dalvik.system.DexClassLoader")
     var dalvik3 = Java.use("dalvik.system.PathClassLoader")
-    #var dalvik4 = Java.use("dalvik.system.InMemoryDexClassLoader")
+    //var dalvik4 = Java.use("dalvik.system.InMemoryDexClassLoader")
     var f = Java.use("java.io.File")
     var url = Java.use("java.net.URL")
     var obj = Java.use("java.lang.Object")
