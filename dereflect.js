@@ -1,8 +1,10 @@
 Java.perform(function() {
 
+    var internalClasses = ["android.", "org."];
     var classDef = Java.use('java.lang.Class');
     var classLoaderDef = Java.use('java.lang.ClassLoader');
     var loadClass = classLoaderDef.loadClass.overload('java.lang.String', 'boolean');
+    var forName = classDef.forName.overload('java.lang.String', 'boolean', 'java.lang.ClassLoader');
     var reflect = Java.use('java.lang.reflect.Method')
     var member = Java.use('java.lang.reflect.Member')
     var dalvik = Java.use("dalvik.system.DexFile")
@@ -12,13 +14,13 @@ Java.perform(function() {
     var f = Java.use("java.io.File")
     var url = Java.use("java.net.URL")
     var obj = Java.use("java.lang.Object")
-
+    var fo = Java.use("java.io.FileOutputStream")
     obj.getClass.implementation = function(){
         o = this.getClass()
         return this.getClass()
     }
     reflect.hashCode.implementation = function (){
-        console.log(this.hashCode())
+        //console.log(this.hashCode())
         return this.hashCode()
     }
     member.getName.implementation = function(){
@@ -27,6 +29,7 @@ Java.perform(function() {
     }
     classDef.getMethods.implementation = function(){
         o = this.getMethods()
+        //console.log(o)
         return this.getMethods()
     }
     reflect.invoke.implementatition = function(a,b){
@@ -35,11 +38,20 @@ Java.perform(function() {
     }
     f.$init.overload("java.net.URI").implementation = function(a){
         console.log("URI called")
-        f.$init(a)
+        this.$init(a)
     }
     f.delete.implementation = function(a){
         console.log("[+] Delete catched =>" +this.getAbsolutePath())
         return true
+    }
+    fo.$init.overload('java.lang.String').implementation = function(a){
+        console.log("[+] Output stream created with the file : " + a)
+        return this.$init(a)
+    }
+    fo.close.implementation = function(){
+        console.log("[!] Output stream closed")
+        fd = this.getFD()
+
     }
     dalvik.loadDex.implementation = function(a,b,c){
         console.log("[+] loadDex Catched -> " + a)
